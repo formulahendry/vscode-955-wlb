@@ -10,16 +10,47 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:955-wlb.helloWorld"
+		"onCommand:955-wlb.showReminder",
+		"onView:955-wlb-company",
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"views": {
+			"955-wlb": [
+				{
+					"id": "955-wlb-company",
+					"name": "955.WLB"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "955-wlb",
+					"title": "955.WLB",
+					"icon": "images/activitybarIcon.svg"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "955-wlb.helloWorld",
-				"title": "Hello World"
+				"command": "955-wlb.showReminder",
+				"title": "Show Reminder",
+				"category": "955.WLB"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "955.WLB",
+			"properties": {
+				"955-wlb.cronExpression": {
+					"type": "string",
+					"default": "30 17 * * 1-5",
+					"description": "Cron Expression for showing reminder to get off work."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -30,16 +61,20 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.59.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.2.2",
 		"@types/node": "14.x",
-		"eslint": "^7.27.0",
+		"@types/node-cron": "^2.0.4",
+		"@types/vscode": "^1.59.0",
 		"@typescript-eslint/eslint-plugin": "^4.26.0",
 		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.27.0",
 		"glob": "^7.1.7",
 		"mocha": "^8.4.0",
 		"typescript": "^4.3.2",
 		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"node-cron": "^3.0.0"
 	}
 }
