@@ -16,6 +16,10 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('955-wlb.showReminder', () => {
 		ReminderView.show(context);
 	}));
+
+	context.subscriptions.push(vscode.commands.registerCommand('955-wlb.openRepo', () => {
+		vscode.env.openExternal(vscode.Uri.parse('https://github.com/formulahendry/955.WLB'));
+	}));
 }
 
 export function deactivate() { }

@@ -11,6 +11,7 @@
 	],
 	"activationEvents": [
 		"onCommand:955-wlb.showReminder",
+		"onCommand:955-wlb.openRepo",
 		"onView:955-wlb-company",
 		"onStartupFinished"
 	],
@@ -37,9 +38,30 @@
 			{
 				"command": "955-wlb.showReminder",
 				"title": "Show Reminder",
-				"category": "955.WLB"
+				"category": "955.WLB",
+				"icon": "$(smiley)"
+			},
+			{
+				"command": "955-wlb.openRepo",
+				"title": "Open 955.WLB GitHub Repo",
+				"category": "955.WLB",
+				"icon": "$(github)"
 			}
 		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "955-wlb.openRepo",
+					"when": "view == 955-wlb-company",
+					"group": "navigation@0"
+				},
+				{
+					"command": "955-wlb.showReminder",
+					"when": "view == 955-wlb-company",
+					"group": "navigation@1"
+				}
+			]
+		},
 		"configuration": {
 			"type": "object",
 			"title": "955.WLB",
