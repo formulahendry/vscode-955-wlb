@@ -6,7 +6,7 @@
 
 ## Features
 
-* Showing reminder to get off work when it is 5:30 PM (you could change the time in configuration).
+* Showing reminder to get off work when it is 5:30 PM on workday (you could change the time in configuration).
 
 ![Usage](images/usage-reminder.png)
 
