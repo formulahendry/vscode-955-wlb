@@ -1,14 +1,29 @@
 {
 	"name": "955-wlb",
 	"displayName": "955.WLB",
-	"description": "Work-life balance",
+	"description": "Work-life balance: For your wellness, for your happiness, for your life, for your family, and for your future!",
 	"version": "0.0.1",
+	"publisher": "formulahendry",
 	"engines": {
 		"vscode": "^1.59.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"keywords": [
+		"955",
+		"WLB",
+		"Work-life balance"
+	],
+	"bugs": {
+		"url": "https://github.com/formulahendry/vscode-955-wlb/issues",
+		"email": "formulahendry@gmail.com"
+	},
+	"homepage": "https://github.com/formulahendry/vscode-955-wlb/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/formulahendry/vscode-955-wlb.git"
+	},
 	"activationEvents": [
 		"onCommand:955-wlb.showReminder",
 		"onCommand:955-wlb.openRepo",
